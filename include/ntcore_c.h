@@ -6,7 +6,7 @@
 
 #include <stdint.h>
 
-#include <wpi/string.h>
+#include <wpi/String.h>
 
 #ifdef __cplusplus
 #include <cstddef>
