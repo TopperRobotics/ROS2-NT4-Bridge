@@ -17,7 +17,7 @@
 #include <variant>
 #include <vector>
 
-#include <wpi/json_fwd.h>
+#include "json_fwd.h"
 
 #include "networktables/NetworkTableValue.h"
 #include "ntcore_c.h"
