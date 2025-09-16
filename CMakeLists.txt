@@ -19,7 +19,8 @@ add_executable(ros_nt_bridge src/main.cpp)
 ament_target_dependencies(ros_nt_bridge rclcpp std_msgs)
 
 # Link libraries
-target_link_libraries(ros_nt_bridge PRIVATE
+target_link_libraries(ros_nt_bridge
+  PRIVATE
   ${NTCORE_LIBRARY}
   ${NTCOREJNI_LIBRARY}
 )
