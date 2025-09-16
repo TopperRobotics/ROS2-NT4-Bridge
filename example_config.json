@@ -1,0 +1,19 @@
+{
+    "ros_to_nt": [
+      {
+        "ros_topic": "/pose2d",
+        "nt_topic": "/ros/pose2d",
+        "type": "geometry_msgs/Pose2D",
+        "fields": ["x", "y", "theta"]
+      }
+    ],
+    "nt_to_ros": [
+      {
+        "nt_topic": "/nt/pose2d",
+        "ros_topic": "/nt_pose2d",
+        "type": "geometry_msgs/Pose2D",
+        "fields": ["x", "y", "theta"]
+      }
+    ]
+  }
+  
