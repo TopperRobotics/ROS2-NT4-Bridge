@@ -4,7 +4,7 @@
   <name>nt-bridge</name>
   <version>0.0.1</version>
   <description>a bridge</description>
-  <maintainer email="">Bentley Smith</maintainer>
+  <maintainer email="bentley-smith@outlook.com">Bentley Smith</maintainer>
   <license>apache v2</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
