@@ -103,7 +103,7 @@ private:
                 ros_subs_.push_back(sub);
 
             }
-            else if (m.type == "float32") {
+            /*else if (m.type == "float32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
 
@@ -115,7 +115,7 @@ private:
                 );
                 ros_subs_.push_back(sub);
 
-            }
+            }*/
             else if (m.type == "int32" || m.type == "uint32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
@@ -189,7 +189,7 @@ private:
                 ros_pubs_.push_back(pub);
 
             }
-            else if (m.type == "float32") {
+            /*else if (m.type == "float32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 auto sub = nt::Subscribe(nt_topic, 0.0);
                 nt_double_topics_in_.push_back(nt_topic);
@@ -199,7 +199,7 @@ private:
                 auto pub = this->create_publisher<std_msgs::msg::Float32>(m.ros_topic, 10);
                 ros_pubs_.push_back(pub);
 
-            }
+            }*/
             else if (m.type == "int32" || m.type == "uint32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 auto sub = nt::Subscribe(nt_topic, 0.0);
@@ -270,7 +270,7 @@ private:
                 pub_index++;
 
             }
-            else if (m.type == "float32") {
+            /*else if (m.type == "float32") {
                 auto data = nt::ReadQueueValue(nt_double_subs_[i]);
                 if (data) {
                     auto msg = std_msgs::msg::Float32();
@@ -280,7 +280,7 @@ private:
                 }
                 pub_index++;
 
-            }
+            }*/
             else if (m.type == "int32" || m.type == "uint32") {
                 auto data = nt::ReadQueueValue(nt_double_subs_[i]);
                 if (data) {
