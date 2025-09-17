@@ -11,6 +11,7 @@
         "exception": "cpp",
         "stdexcept": "cpp",
         "type_traits": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "fstream": "cpp"
     }
 }
