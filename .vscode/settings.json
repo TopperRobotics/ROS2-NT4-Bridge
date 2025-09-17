@@ -10,6 +10,7 @@
         "cstddef": "cpp",
         "exception": "cpp",
         "stdexcept": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "span": "cpp"
     }
 }

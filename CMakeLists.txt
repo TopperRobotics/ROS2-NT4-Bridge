@@ -18,7 +18,7 @@ ament_target_dependencies(nt-bridge rclcpp std_msgs sensor_msgs geometry_msgs)
 target_include_directories(nt-bridge PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-#target_compile_features(nt-bridge PUBLIC c_std_23 cxx_std_23)  # Require C99 and C++17a
+#target_compile_features(nt-bridge PUBLIC c_std_23 cxx_std_20)
 
 install(TARGETS nt-bridge
   DESTINATION lib/${PROJECT_NAME})

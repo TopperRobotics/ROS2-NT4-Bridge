@@ -5,14 +5,15 @@
 #include <unordered_map>
 #include <span>
 
+
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64.hpp"
 #include "geometry_msgs/msg/pose2_d.hpp"
 
 #include "ntcore_cpp.h"
-//#include "json.hpp"
+#include "json.hpp"
 
-//using json = nlohmann::json;
+using json = nlohmann::json;
 
 std::string roborioIPAddress;
 
@@ -28,7 +29,7 @@ public:
     RosNtBridge(const std::string& config_path)
         : Node("ros_nt_bridge") {
         // ---- Load JSON Config ----
-        /*std::ifstream file(config_path);
+        std::ifstream file(config_path);
         if (!file.is_open()) {
             throw std::runtime_error("Could not open config file: " + config_path);
         }
@@ -54,7 +55,7 @@ public:
                 for (auto& f : m["fields"]) map.fields.push_back(f);
             }
             nt_to_ros_.push_back(map);
-        }*/
+        }
 
         // ---- NT4 Setup ----
         inst_ = nt::GetDefaultInstance();
@@ -104,7 +105,7 @@ private:
                 ros_subs_.push_back(sub);
 
             }
-            /*else if (m.type == "float32") {
+            else if (m.type == "float32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
 
@@ -116,8 +117,8 @@ private:
                 );
                 ros_subs_.push_back(sub);
 
-            }*/
-            /*else if (m.type == "int32" || m.type == "uint32") {
+            }
+            else if (m.type == "int32" || m.type == "uint32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
 
@@ -170,7 +171,7 @@ private:
                 );
                 ros_subs_.push_back(sub);
 
-            }*/
+            }
             else {
                 RCLCPP_WARN(this->get_logger(), "Unsupported ROS->NT type: %s", m.type.c_str());
             }
@@ -190,7 +191,7 @@ private:
                 ros_pubs_.push_back(pub);
 
             }
-            /*else if (m.type == "float32") {
+            else if (m.type == "float32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 auto sub = nt::Subscribe(nt_topic, 0.0);
                 nt_double_topics_in_.push_back(nt_topic);
@@ -248,7 +249,7 @@ private:
                 auto pub = this->create_publisher<geometry_msgs::msg::Pose2D>(m.ros_topic, 10);
                 ros_pubs_.push_back(pub);
 
-            }*/
+            }
             else {
                 RCLCPP_WARN(this->get_logger(), "Unsupported NT->ROS type: %s", m.type.c_str());
             }
@@ -271,7 +272,7 @@ private:
                 pub_index++;
 
             }
-            /*else if (m.type == "float32") {
+            else if (m.type == "float32") {
                 auto data = nt::ReadQueueValue(nt_double_subs_[i]);
                 if (data) {
                     auto msg = std_msgs::msg::Float32();
@@ -332,7 +333,7 @@ private:
                     }
                     pub_index++;
                 }
-            }*/
+            }
            else {
                 std::cout<<"here here here here here here pollnt else";
            }
