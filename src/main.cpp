@@ -116,7 +116,7 @@ private:
                 ros_subs_.push_back(sub);
 
             }*/
-            else if (m.type == "int32" || m.type == "uint32") {
+            /*else if (m.type == "int32" || m.type == "uint32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
 
@@ -169,7 +169,7 @@ private:
                 );
                 ros_subs_.push_back(sub);
 
-            }
+            }*/
             else {
                 RCLCPP_WARN(this->get_logger(), "Unsupported ROS->NT type: %s", m.type.c_str());
             }
@@ -199,7 +199,7 @@ private:
                 auto pub = this->create_publisher<std_msgs::msg::Float32>(m.ros_topic, 10);
                 ros_pubs_.push_back(pub);
 
-            }*/
+            }
             else if (m.type == "int32" || m.type == "uint32") {
                 auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
                 auto sub = nt::Subscribe(nt_topic, 0.0);
@@ -247,7 +247,7 @@ private:
                 auto pub = this->create_publisher<geometry_msgs::msg::Pose2D>(m.ros_topic, 10);
                 ros_pubs_.push_back(pub);
 
-            }
+            }*/
             else {
                 RCLCPP_WARN(this->get_logger(), "Unsupported NT->ROS type: %s", m.type.c_str());
             }
@@ -280,7 +280,7 @@ private:
                 }
                 pub_index++;
 
-            }*/
+            }
             else if (m.type == "int32" || m.type == "uint32") {
                 auto data = nt::ReadQueueValue(nt_double_subs_[i]);
                 if (data) {
@@ -331,7 +331,10 @@ private:
                     }
                     pub_index++;
                 }
-            }
+            }*/
+           else {
+                std::cout<<"here here here here here here pollnt else";
+           }
         }
     }
 };
