@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <unordered_map>
+#include <span>
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64.hpp"
@@ -91,7 +92,7 @@ private:
     void setupRosToNt() {
         for (auto& m : ros_to_nt_) {
             if (m.type == "float64") {
-                auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
+                auto nt_topic = nt::GetTopic(inst_, m.nt_topic);
                 nt_double_topics_out_.push_back(nt_topic);
 
                 auto sub = this->create_subscription<std_msgs::msg::Float64>(
@@ -179,7 +180,7 @@ private:
     void setupNtToRos() {
         for (auto& m : nt_to_ros_) {
             if (m.type == "float64") {
-                auto nt_topic = nt::GetDoubleTopic(inst_, m.nt_topic);
+                auto nt_topic = nt::GetTopic(inst_, m.nt_topic);
                 auto sub = nt::Subscribe(nt_topic, 0.0);
                 nt_double_topics_in_.push_back(nt_topic);
                 nt_double_subs_.push_back(sub);

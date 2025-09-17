@@ -16,6 +16,7 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#include <span>
 
 #include "json_fwd.hpp"
 
