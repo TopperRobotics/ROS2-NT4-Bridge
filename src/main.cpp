@@ -10,9 +10,9 @@
 #include "geometry_msgs/msg/pose2_d.hpp"
 
 #include "ntcore_cpp.h"
-#include "json.hpp"
+//#include "json.hpp"
 
-using json = nlohmann::json;
+//using json = nlohmann::json;
 
 std::string roborioIPAddress;
 
@@ -28,7 +28,7 @@ public:
     RosNtBridge(const std::string& config_path)
         : Node("ros_nt_bridge") {
         // ---- Load JSON Config ----
-        std::ifstream file(config_path);
+        /*std::ifstream file(config_path);
         if (!file.is_open()) {
             throw std::runtime_error("Could not open config file: " + config_path);
         }
@@ -54,7 +54,7 @@ public:
                 for (auto& f : m["fields"]) map.fields.push_back(f);
             }
             nt_to_ros_.push_back(map);
-        }
+        }*/
 
         // ---- NT4 Setup ----
         inst_ = nt::GetDefaultInstance();
