@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(nt-bridge)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options( -O2)
+  add_compile_options(-O2)
 endif()
 
 # find dependencies
@@ -18,7 +18,7 @@ ament_target_dependencies(nt-bridge rclcpp std_msgs sensor_msgs geometry_msgs)
 target_include_directories(nt-bridge PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-#target_compile_features(nt-bridge PUBLIC c_std_23 cxx_std_20)
+target_compile_features(nt-bridge PUBLIC c_std_23 cxx_std_23)
 
 install(TARGETS nt-bridge
   DESTINATION lib/${PROJECT_NAME})
