@@ -3,6 +3,13 @@
         "vector": "cpp",
         "memory": "cpp",
         "string": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "iosfwd": "cpp",
+        "utility": "cpp",
+        "iterator": "cpp",
+        "cstddef": "cpp",
+        "exception": "cpp",
+        "stdexcept": "cpp",
+        "type_traits": "cpp"
     }
 }
